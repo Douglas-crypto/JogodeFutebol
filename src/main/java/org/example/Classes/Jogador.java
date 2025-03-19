@@ -8,8 +8,8 @@ public class Jogador {
     int gols;
     int assistencias;
 
-    public void AtribuirValores(Scanner scanner) {
-        Scanner scanner = new Scanner(System.in);
+    // AtribuirValores agora usa um Scanner externo sem criar um novo dentro
+    public void AtribuirValores(Scanner scanner) { 
         System.out.println("Informe o nome do jogador: ");
         this.nome = scanner.nextLine();
 
@@ -40,12 +40,12 @@ public class Jogador {
         return resultado;
     }
 
-    public Boolean isGood(Jogador jogador) {
-        if (jogador.jogos > 5 && jogador.gols > 5 && jogador.assistencias > 5) {
-            System.out.println("É um bom jogador");
+    public Boolean isGood() {
+        if (this.jogos > 5 && this.gols > 5 && this.assistencias > 5) {
+            System.out.println(this.nome + " é um bom jogador");
             return true;
         } else {
-            System.out.println("É um jogador ruim");
+            System.out.println(this.nome + " é um jogador ruim");
             return false;
         }
     }
