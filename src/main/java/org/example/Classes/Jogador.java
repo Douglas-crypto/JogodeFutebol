@@ -3,32 +3,32 @@ package org.example.Classes;
 import java.util.Scanner;
 
 public class Jogador {
-    String nome;
-    int jogos;
-    int gols;
-    int assistencias;
+    private static final Scanner scanner = new Scanner(System.in); 
+    private String nome;
+    private int jogos;
+    private int gols;
+    private int assistencias;
 
-
-    public void AtribuirValores(Scanner scanner) { 
-        System.out.println("Informe o nome do jogador: ");
+    public void atribuirValores() { 
+        System.out.print("Informe o nome do jogador: ");
         this.nome = scanner.nextLine();
 
-        System.out.println("Informe a quantidade de jogos jogados: ");
+        System.out.print("Informe a quantidade de jogos jogados: ");
         this.jogos = scanner.nextInt();
 
-        System.out.println("Informe a quantidade de gols feitas: ");
+        System.out.print("Informe a quantidade de gols feitos: ");
         this.gols = scanner.nextInt();
 
-        System.out.println("Informe a quantidade de assistências: ");
+        System.out.print("Informe a quantidade de assistências: ");
         this.assistencias = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine(); // Consumir quebra de linha
     }
 
-    public String ExibirValores() {
-        return "Nome do jogador ou dos jogadores: " + nome + "\n" +
-                "Quantidade de jogos jogados: " + jogos + "\n" +
-                "Quantidade de gols: " + gols + "\n" +
-                "Quantidade de assistências: " + assistencias;
+    public String exibirValores() {
+        return "Nome: " + nome + "\n" +
+               "Jogos: " + jogos + "\n" +
+               "Gols: " + gols + "\n" +
+               "Assistências: " + assistencias;
     }
 
     public Jogador somarEstatisticas(Jogador outro) {
@@ -40,13 +40,9 @@ public class Jogador {
         return resultado;
     }
 
-    public Boolean isGood() {
-        if (this.jogos > 5 && this.gols > 5 && this.assistencias > 5) {
-            System.out.println(this.nome + " é um bom jogador");
-            return true;
-        } else {
-            System.out.println(this.nome + " é um jogador ruim");
-            return false;
-        }
+    public boolean isGood() {
+        boolean bomJogador = jogos > 5 && gols > 5 && assistencias > 5;
+        System.out.println(nome + (bomJogador ? " é um bom jogador" : " é um jogador mediano"));
+        return bomJogador;
     }
 }
