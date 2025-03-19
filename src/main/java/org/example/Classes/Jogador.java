@@ -21,11 +21,11 @@ public class Jogador {
 
         System.out.println("Informe a quantidade de assistências: ");
         this.assistencias = scanner.nextInt();
-        scanner.nextLine(); // Consumir quebra de linha pendente
+        scanner.nextLine(); 
     }
 
     public String ExibirValores() {
-        return "Nome do jogador: " + nome + "\n" +
+        return "Nome do jogador ou dos jogadores: " + nome + "\n" +
                 "Quantidade de jogos jogados: " + jogos + "\n" +
                 "Quantidade de gols: " + gols + "\n" +
                 "Quantidade de assistências: " + assistencias;
