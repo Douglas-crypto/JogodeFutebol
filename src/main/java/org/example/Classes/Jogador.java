@@ -8,7 +8,7 @@ public class Jogador {
     int gols;
     int assistencias;
 
-    // AtribuirValores agora usa um Scanner externo sem criar um novo dentro
+
     public void AtribuirValores(Scanner scanner) { 
         System.out.println("Informe o nome do jogador: ");
         this.nome = scanner.nextLine();
