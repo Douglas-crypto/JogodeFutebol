@@ -1,4 +1,5 @@
 package org.example;
+
 import java.util.Scanner;
 
 public class Jogador {
@@ -30,14 +31,12 @@ public class Jogador {
         System.out.println("Quantidade de assistências: " + assistencias);
     }
 
-
-   public int[] somaAtributos(Jogador outro) {
+    public int[] somaAtributos(Jogador outro) {
         int somaJogos = this.jogos + outro.jogos;
         int somaGols = this.gols + outro.gols;
         int somaAssistencias = this.assistencias + outro.assistencias;
         return new int[]{somaJogos, somaGols, somaAssistencias};
     }
-
 
     public void exibirSomaAtributos(int[] somas) {
         System.out.println("Soma dos jogos: " + somas[0]);
@@ -45,12 +44,14 @@ public class Jogador {
         System.out.println("Soma das assistências: " + somas[2]);
     }
 
-
-    public void eBom() {
+    // Método eBom com mensagens e retorno booleano
+    public boolean eBom() {
         if (jogos > 5 && gols > 5 && assistencias > 5) {
             System.out.println("É um bom jogador");
+            return true;
         } else {
             System.out.println("É um mal jogador");
+            return false;
         }
     }
 }
