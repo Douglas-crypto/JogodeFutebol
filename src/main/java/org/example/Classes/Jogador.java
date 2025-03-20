@@ -44,7 +44,7 @@ public class Jogador {
         System.out.println("Soma das assistências: " + somas[2]);
     }
 
-    // Método eBom com mensagens e retorno booleano
+   
     public boolean eBom() {
         if (jogos > 5 && gols > 5 && assistencias > 5) {
             System.out.println("É um bom jogador");
