@@ -1,30 +1,30 @@
 package org.example;
 
-import org.example.Classes.Jogador;
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Cadastro do primeiro jogador:");
+
         Jogador jogador1 = new Jogador();
-        jogador1.atribuirValores();
-        System.out.println();
-
-        System.out.println("Cadastro do segundo jogador:");
         Jogador jogador2 = new Jogador();
-        jogador2.atribuirValores();
-        System.out.println();
 
-        jogador1.isGood();
-        jogador2.isGood();
+        System.out.println("Informe os dados do Jogador 1:");
+        jogador1.atribuiDados();
 
-        System.out.println("\nInformações dos jogadores:");
-        System.out.println(jogador1.exibirValores());
-        System.out.println();
-        System.out.println(jogador2.exibirValores());
+        System.out.println("Informe os dados do Jogador 2:");
+        jogador2.atribuiDados();
 
-        // Somando estatísticas dos jogadores
-        Jogador estatisticasTotais = jogador1.somarEstatisticas(jogador2);
-        System.out.println("\nEstatísticas somadas dos jogadores:");
-        System.out.println(estatisticasTotais.exibirValores());
+        System.out.println("\nInformações do Jogador 1:");
+        jogador1.exibirResultados();
+
+        System.out.println("\nInformações do Jogador 2:");
+        jogador2.exibirResultados();
+
+        System.out.println("\nSoma dos atributos dos jogadores:");
+        jogador1.exibirSomaAtributos(jogador2);
+
+        System.out.println("\nAvaliação do Jogador 1:");
+        jogador1.eBom();
+
+        System.out.println("\nAvaliação do Jogador 2:");
+        jogador2.eBom();
     }
 }
