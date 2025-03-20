@@ -44,7 +44,6 @@ public class Jogador {
         System.out.println("Soma das assistências: " + somas[2]);
     }
 
-   
     public boolean eBom() {
         if (jogos > 5 && gols > 5 && assistencias > 5) {
             System.out.println("É um bom jogador");
