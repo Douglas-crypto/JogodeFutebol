@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-
+        
         Jogador jogador1 = new Jogador();
         Jogador jogador2 = new Jogador();
 
@@ -18,8 +18,11 @@ public class Main {
         System.out.println("\nInformações do Jogador 2:");
         jogador2.exibirResultados();
 
+        int[] somas = jogador1.somaAtributos(jogador2);
+
         System.out.println("\nSoma dos atributos dos jogadores:");
-        jogador1.exibirSomaAtributos(jogador2);
+        System.out.println("Jogadores: " + jogador1.nome + " e " + jogador2.nome);
+        jogador1.exibirSomaAtributos(somas);
 
         System.out.println("\nAvaliação do Jogador 1:");
         jogador1.eBom();
